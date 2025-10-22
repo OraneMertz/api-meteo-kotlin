@@ -24,6 +24,7 @@ config.json
 *.rar
 
 # Gradle
+.gradle
 gradle
 gradlew
 gradlew.bat
