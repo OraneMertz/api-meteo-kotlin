@@ -14,15 +14,10 @@ suspend fun main() {
 
     val weatherService = WeatherService(config)
 
-    while (true) {
-        val weatherData = weatherService.fetchWeather()
+    val weatherData = weatherService.fetchWeather()
+    println("🌤️ Météo pour ${weatherData.cityName}")
+    println("🌡️ Température: ${weatherData.temperature}°C")
+    println("💧 Humidité: ${weatherData.humidity}%")
+    println("🌬️ Vent: ${weatherData.windSpeed} km/h")
 
-        println("🌤️  Météo pour ${weatherData.cityName}")
-        println("🌡️  Température: ${weatherData.temperature}°C")
-        println("💧 Humidité: ${weatherData.humidity}%")
-        println("🌬️  Vent: ${weatherData.windSpeed} km/h")
-        println("─────────────────────────────")
-
-        delay(config.refresh)
-    }
 }
